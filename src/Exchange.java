@@ -1,3 +1,5 @@
-public record Exchange(double conversion_result) {
+public record Exchange(String base_code,
+                       String target_code,
+                       double conversion_result) {
 
 }

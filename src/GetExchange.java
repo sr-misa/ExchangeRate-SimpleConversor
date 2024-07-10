@@ -19,7 +19,7 @@ public class GetExchange {
                     .send(request, HttpResponse.BodyHandlers.ofString());
             return new Gson().fromJson(response.body(), Exchange.class);
         } catch (Exception e) {
-            throw new RuntimeException("Error en la conversión. ");
+            throw new RuntimeException("Conversion error. ");
         }
     }
 }

@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,8 +11,18 @@ public class Main {
 
         do {
             baseCurrency = menu.getUserCode("");
-            if(!menu.options.containsKey(baseCurrency))
-                continue;
+            if(!menu.options.containsKey(baseCurrency)){
+                switch(baseCurrency){
+                    case "HST":
+                        records.showHistory();
+                        continue;
+                    case "EXT":
+                        return;
+                    default:
+                        continue;
+                }
+            }
+
             do {
                 dstCurrency = menu.getUserCode(baseCurrency);
             }while(!(menu.options.containsKey(dstCurrency) && !dstCurrency.equals(baseCurrency)) && !dstCurrency.equals("EXT"));
@@ -26,10 +35,10 @@ public class Main {
             System.out.println("\n$" + amount + " " + menu.options.get(baseCurrency) +
                     " = $" + conversion.conversion_result() + " " + menu.options.get(dstCurrency));
             try{
-                records.CreateReadFile(conversion);
+                records.SaveFile(conversion);
             }catch(IOException e){
                 System.out.println("Error saving conversion.");
             }
-        }while(!baseCurrency.equals("EXT"));
+        }while(true);
     }
 }

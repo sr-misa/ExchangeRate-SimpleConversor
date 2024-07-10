@@ -12,7 +12,7 @@ public class CodeMenu {
     public String getUserCode(String baseCode){
         System.out.println("\nWrite " + (baseCode.isEmpty() ? "your":"a DIFFERENT ") + "currency code (" + (baseCode.isEmpty() ? "FROM":"TO") + "): ");
         options.forEach((k,v) -> {if(!k.equals(baseCode))System.out.println(k + " - " + v);});
-        System.out.println("EXT - Exit");
+        System.out.println((baseCode.isEmpty() ? "HST - Conversions History":"") + "\nEXT - Exit");
         return reading.nextLine();
     }
 
