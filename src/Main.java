@@ -6,9 +6,9 @@ public class Main {
         ConversionHistory records = new ConversionHistory();
         GetExchange currency = new GetExchange();
         CodeMenu menu = new CodeMenu();
-        String baseCurrency = "";
-        String dstCurrency = "";
-        double amount = 0.0;
+        String baseCurrency;
+        String dstCurrency;
+        double amount;
 
         do {
             baseCurrency = menu.getUserCode("");

@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -15,12 +14,6 @@ public class CodeMenu {
         options.forEach((k,v) -> {if(!k.equals(baseCode))System.out.println(k + " - " + v);});
         System.out.println("EXT - Exit");
         return reading.nextLine();
-    }
-
-    public boolean checkCode(String code){
-        if(options.containsKey(code) || code.equals("EXT"))
-            return true;
-        return false;
     }
 
     public double getAmount(String baseCode, String dstCode){

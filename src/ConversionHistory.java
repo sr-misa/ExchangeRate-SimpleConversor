@@ -3,7 +3,6 @@ import com.google.gson.GsonBuilder;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.FileReader;
 
 public class ConversionHistory {
     public void CreateReadFile(Exchange exchange) throws IOException {
